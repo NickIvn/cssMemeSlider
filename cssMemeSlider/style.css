@@ -1,3 +1,123 @@
-body {
-    background-color: rgb(59, 59, 59);
+*{
+    margin: 0;
+    padding: 0;
 }
+body {
+    margin: auto;
+    max-width: 1024px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    color: black;
+    margin: 20px auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 80vw;
+    background-color: rgb(59, 59, 59);
+    align-items: center;
+    border-radius: 2%;
+}
+
+.meme-container {
+    display: flex;
+    width: 50vw;
+    border-radius: 2%;
+    overflow: hidden;
+    padding: 20px;
+    margin: auto;
+    /* background-color: #be0f0f; */
+}
+
+.slider {
+    display: flex;
+    gap: 30px;
+    transition: transform 1s ease-in-out;
+}
+
+.content {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 50vw;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.text {
+    color: #fff;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.controls {
+    display: flex;
+    gap: 5%;
+}
+
+.control-inner {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.control-outer {
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #3753d1;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-bg {
+    display: inline-flex;
+    cursor: pointer;
+    /* background-color: rgb(10, 201, 137); */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-bg:hover .control-outer {
+    background-color: #fff;
+}
+
+@keyframes desappearance {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes appearance {
+    from {
+        opacity: 0;
+        display: none;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text.desappearance {
+    animation: desappearance 0.5s forwards;
+}
+
+.text.appearance {
+    animation: appearance 3s forwards;
+} 
