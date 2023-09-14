@@ -20,9 +20,11 @@ function updateSlide() {
         }
         texts.forEach((text, index) => {
             if(index === currentIndex) {
-                // text.style.display = 'flex';
+                text.style.display = 'flex';
                 text.classList.add('appearance');
             } else {
+                text.classList.remove('appearance');
+                text.classList.add('desappearance');
                 text.style.display = 'none';
             }
         })
@@ -39,8 +41,12 @@ controls.forEach((control, index) => {
 
 function updateSlideWidth() {
     const imageWidth = image.width;
+    if(window.innerWidth <= 1420) {
     console.log(imageWidth);
             slideWidth = imageWidth + 30;
+    } else {
+        slideWidth = imageWidth + 30;
+    }
             updateSlide();
         }
         
