@@ -42,7 +42,7 @@ controls.forEach((control, index) => {
 function updateSlideWidth() {
     const imageWidth = image.width;
     if(window.innerWidth <= 1420) {
-    console.log(imageWidth);
+    // console.log(imageWidth);
             slideWidth = imageWidth + 30;
     } else {
         slideWidth = imageWidth + 30;

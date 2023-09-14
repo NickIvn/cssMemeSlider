@@ -136,6 +136,22 @@ img {
     }
 }
 
+@media (max-width: 970px) {
+    .content {
+        flex-direction: column-reverse;
+        gap: 5%;
+        height: 50px;
+    }
+
+    .text {
+        margin-top: 15px;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 800px) {
     .meme-text {
         font-size: 70%;
