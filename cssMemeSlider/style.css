@@ -6,11 +6,15 @@ body {
     margin: auto;
     max-width: 1024px;
     font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(59, 59, 59);
 }
 
 h1 {
-    color: black;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 20px auto;
+    text-align: center;
+
 }
 
 .container {
@@ -18,7 +22,8 @@ h1 {
     flex-direction: column;
     margin: auto;
     max-width: 80vw;
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(49, 49, 49);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     align-items: center;
     border-radius: 2%;
 }
@@ -30,7 +35,6 @@ h1 {
     overflow: hidden;
     padding: 20px;
     margin: auto;
-    /* background-color: #be0f0f; */
 }
 
 .slider {
@@ -43,12 +47,13 @@ h1 {
     display: inline-flex;
     justify-content: space-between;
     width: 50vw;
-    align-items: center;
+    height: 40px;
     margin-bottom: 20px;
 }
 
-.text {
+.meme-text {
     color: #fff;
+    font-size: 90%;
 }
 
 img {
@@ -58,7 +63,7 @@ img {
 
 .controls {
     display: flex;
-    gap: 5%;
+    gap: 0.2vw;
 }
 
 .control-inner {
@@ -82,7 +87,6 @@ img {
 .control-bg {
     display: inline-flex;
     cursor: pointer;
-    /* background-color: rgb(10, 201, 137); */
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -114,10 +118,41 @@ img {
     }
 }
 
-.text.desappearance {
+.meme-text.desappearance {
     animation: desappearance 0.5s forwards;
 }
 
-.text.appearance {
+.meme-text.appearance {
     animation: appearance 3s forwards;
-} 
+}
+
+@media (min-width: 1421px) {
+    .meme-container {
+        width: 30vw;
+    }
+
+    .content {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .meme-text {
+        font-size: 70%;
+    }
+
+    .control-bg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .control-outer {
+        width: 12px;
+        height: 12px;
+    }
+
+    .control-inner {
+        width: 8px;
+        height: 8px;
+    }
+}
