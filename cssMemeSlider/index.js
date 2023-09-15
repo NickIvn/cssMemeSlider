@@ -33,7 +33,7 @@ function updateSlide() {
 
 controls.forEach((control, index) => {
     control.addEventListener('click', () => {
-        console.log('click');
+        // console.log('click');
         currentIndex = index;
         updateSlide();
     })

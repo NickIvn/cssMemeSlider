@@ -4,15 +4,14 @@
 }
 body {
     margin: auto;
-    max-width: 1024px;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(59, 59, 59);
 }
 
 h1 {
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 20px auto;
+    text-shadow: 0.08em 0.08em 0.2em rgba(0, 0, 0, 0.5);
+    margin: 0.8em auto;
     text-align: center;
 
 }
@@ -23,9 +22,9 @@ h1 {
     margin: auto;
     max-width: 80vw;
     background-color: rgb(49, 49, 49);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0.2em 0.2em 1em rgba(255, 255, 255, 0.3);
     align-items: center;
-    border-radius: 2%;
+    border-radius: 1%;
 }
 
 .meme-container {
@@ -33,13 +32,13 @@ h1 {
     width: 50vw;
     border-radius: 2%;
     overflow: hidden;
-    padding: 20px;
+    padding: 1.2em;
     margin: auto;
 }
 
 .slider {
     display: flex;
-    gap: 30px;
+    gap: 1.875em;
     transition: transform 1s ease-in-out;
 }
 
@@ -47,8 +46,8 @@ h1 {
     display: inline-flex;
     justify-content: space-between;
     width: 50vw;
-    height: 40px;
-    margin-bottom: 20px;
+    height: 2.5em;
+    margin-bottom: 1.25em;
 }
 
 .meme-text {
@@ -58,7 +57,7 @@ h1 {
 
 img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 2%;
 }
 
 .controls {
@@ -68,15 +67,15 @@ img {
 
 .control-inner {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 0.8vw;
+    height: 0.8vw;
     border-radius: 50%;
 }
 
 .control-outer {
     display: inline-flex;
-    width: 14px;
-    height: 14px;
+    width: 1.4vw;
+    height: 1.4vw;
     border-radius: 50%;
     background-color: #3753d1;
     cursor: pointer;
@@ -87,8 +86,8 @@ img {
 .control-bg {
     display: inline-flex;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 2vw;
+    height: 2vw;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -134,17 +133,33 @@ img {
     .content {
         width: 30vw;
     }
+
+    .control-bg {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+
+    .control-outer {
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .control-inner {
+        width: 0.6vw;
+        height: 0.6vw;
+    }
+
 }
 
 @media (max-width: 970px) {
     .content {
         flex-direction: column-reverse;
         gap: 5%;
-        height: 50px;
+        height: 3.125em;
     }
 
     .text {
-        margin-top: 15px;
+        margin-top: 0.938em;
     }
 
     .controls {
@@ -158,17 +173,17 @@ img {
     }
 
     .control-bg {
-        width: 15px;
-        height: 15px;
+        width: 2.5vw;
+        height: 2.5vw;
     }
 
     .control-outer {
-        width: 12px;
-        height: 12px;
+        width: 2vw;
+        height: 2vw;
     }
 
     .control-inner {
-        width: 8px;
-        height: 8px;
+        width: 1.4vw;
+        height: 1.4vw;
     }
 }
