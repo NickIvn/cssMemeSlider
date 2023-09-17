@@ -1,4 +1,5 @@
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -13,7 +14,6 @@ h1 {
     text-shadow: 0.08em 0.08em 0.2em rgba(0, 0, 0, 0.5);
     margin: 0.8em auto;
     text-align: center;
-
 }
 
 .container {
@@ -32,14 +32,21 @@ h1 {
     width: 50vw;
     border-radius: 2%;
     overflow: hidden;
-    padding: 1.2em;
+    padding: 1.23em;
     margin: auto;
 }
 
 .slider {
     display: flex;
-    gap: 1.875em;
-    transition: transform 1s ease-in-out;
+    gap: 10%;
+    transition: transform 1s ease;
+}
+
+.meme {
+    display: flex;
+    width: 100%;
+    border-radius: 2%;
+    transition: transform 0.5s ease;
 }
 
 .content {
@@ -50,79 +57,103 @@ h1 {
     margin-bottom: 1.25em;
 }
 
-.meme-text {
-    color: #fff;
-    font-size: 90%;
+.text .meme-text{
+    display: none;
+    opacity: 0;
 }
 
-img {
-    width: 100%;
-    border-radius: 2%;
-}
-
-.controls {
+.control-container {
     display: flex;
     gap: 0.2vw;
 }
 
 .control-inner {
-    display: inline-block;
+    display: none;
     width: 0.8vw;
     height: 0.8vw;
     border-radius: 50%;
+    background-color: rgb(59, 59, 59);
 }
 
 .control-outer {
     display: inline-flex;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 1.4vw;
     height: 1.4vw;
     border-radius: 50%;
     background-color: #3753d1;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
 }
 
-.control-bg {
-    display: inline-flex;
-    cursor: pointer;
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-}
-
-.control-bg:hover .control-outer {
+.control-outer:hover .button {
     background-color: #fff;
 }
 
-@keyframes desappearance {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        display: none;
-    }
+input[type="radio"] {
+    display: none;
+}
+
+
+input#meme1:checked ~ .meme-container .meme {
+    transform: translateX(0);
+}
+
+input#meme2:checked ~ .meme-container .meme {
+    transform: translateX(-110%);
+}
+
+input#meme3:checked ~ .meme-container .meme {
+    transform: translateX(-220%);
+}
+
+input#meme4:checked ~ .meme-container .meme {
+    transform: translateX(-330%);
+}
+
+input#meme5:checked ~ .meme-container .meme {
+    transform: translateX(-440%);
+}
+
+input#meme1:checked ~ .content #text1,
+input#meme2:checked ~ .content #text2,
+input#meme3:checked ~ .content #text3,
+input#meme4:checked ~ .content #text4,
+input#meme5:checked ~ .content #text5 {
+    display: block;
+    opacity: 1;
+}
+
+
+input#meme1:checked ~ .content label[for="meme1"] .control-inner,
+input#meme2:checked ~ .content label[for="meme2"] .control-inner,
+input#meme3:checked ~ .content label[for="meme3"] .control-inner,
+input#meme4:checked ~ .content label[for="meme4"] .control-inner,
+input#meme5:checked ~ .content label[for="meme5"] .control-inner {
+    display: flex;
 }
 
 @keyframes appearance {
-    from {
+    0% {
         opacity: 0;
-        display: none;
     }
-    to {
+    100% {
         opacity: 1;
     }
 }
-
-.meme-text.desappearance {
-    animation: desappearance 0.5s forwards;
-}
-
-.meme-text.appearance {
-    animation: appearance 3s forwards;
+.meme-text{
+    font-size: 0.9em;
+    color: white;
+    animation: appearance 1s ease-in;
 }
 
 @media (min-width: 1421px) {
@@ -134,12 +165,12 @@ img {
         width: 30vw;
     }
 
-    .control-bg {
+    .control-outer {
         width: 1.5vw;
         height: 1.5vw;
     }
 
-    .control-outer {
+    .button {
         width: 1vw;
         height: 1vw;
     }
@@ -154,30 +185,31 @@ img {
 @media (max-width: 970px) {
     .content {
         flex-direction: column-reverse;
-        gap: 5%;
         height: 3.125em;
     }
-
-    .text {
-        margin-top: 0.938em;
-    }
-
-    .controls {
+    .control-container {
         justify-content: center;
+        gap: 2%;
     }
 }
 
 @media (max-width: 800px) {
     .meme-text {
         font-size: 70%;
+        height: 20%;
     }
 
-    .control-bg {
+    .meme-container {
+        height: 100%;
+        margin-bottom: 2%;
+    }
+
+    .control-outer {
         width: 2.5vw;
         height: 2.5vw;
     }
 
-    .control-outer {
+    .button {
         width: 2vw;
         height: 2vw;
     }
